@@ -4,7 +4,7 @@ A simple Kotlin-based mobile application that allows users to log in, view medic
 
 ## Features
 - **Login Screen**: Users can log in with any username and password without validation.
-  ![Splash](https://github.com/user-attachments/assets/9f16e5a4-348f-483e-9665-a503f990ceb7)
+  <img src= "https://github.com/user-attachments/assets/9f16e5a4-348f-483e-9665-a503f990ceb7" alt="Splash" width="400">
 - **Medicine Cards**: Displays a list of medicines with details (name, dose, strength) fetched from a remote API and stored locally using Room Database.
   ![Data](https://github.com/user-attachments/assets/46907762-8b75-4d52-b9d6-775f79c655ad)
 - **Detailed View**: Tapping on a medicine card opens a detailed view showing all medicine details.
