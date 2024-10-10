@@ -4,7 +4,7 @@ import com.compose.api.task.common.NetworkUtils
 import com.compose.api.task.data.data_source.local.MedicineDao
 import com.compose.api.task.data.data_source.remote.ApiService
 import com.compose.api.task.data.mapper.MedicineMapper.toMedicine
-import com.compose.api.task.data.mapper.MedicineMapper.toMedicineEntity
+import com.compose.api.task.data.mapper.MedicineMapper.toMedicineEntityList
 import com.compose.api.task.domain.models.Medicine
 import com.compose.api.task.domain.repository.MedicinesRepository
 import kotlinx.coroutines.Dispatchers
@@ -29,12 +29,10 @@ class MedicinesRepositoryImpl @Inject constructor(
                     try {
                         val response = apiService.getMedicines()
                         if (response.isSuccessful) {
-                            val remoteMedicines = response.body() ?: emptyList()
+                            val remoteMedicines = response.body()?.toMedicineEntityList() ?: emptyList()
                             emit(remoteMedicines.map { it.toMedicine() })
                             medicineDao.nukeTable()
-                            remoteMedicines.forEach { medicine ->
-                                medicineDao.insert(medicine.toMedicineEntity())
-                            }
+                            medicineDao.insertAll(remoteMedicines)
                         } else {
                             throw Exception("Error fetching medicines from API \n ${response.message()}")
                         }
