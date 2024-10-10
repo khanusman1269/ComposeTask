@@ -12,6 +12,9 @@ interface MedicineDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insert(medicine: MedicineEntity)
 
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertAll(medicines: List<MedicineEntity>)
+
     @Query("SELECT * FROM medicines")
     fun getAllMedicines(): Flow<List<MedicineEntity>>
 
