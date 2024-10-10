@@ -2,6 +2,7 @@ package com.compose.api.task.di
 
 import android.content.Context
 import androidx.room.Room
+import com.compose.api.task.common.NetworkUtils
 import com.compose.api.task.data.data_source.local.AppDatabase
 import com.compose.api.task.data.data_source.local.MedicineDao
 import com.compose.api.task.data.data_source.remote.ApiService
@@ -83,8 +84,12 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun providesMedicinesRepository(apiService: ApiService, medicineDao: MedicineDao): MedicinesRepository {
-        return MedicinesRepositoryImpl(apiService, medicineDao)
+    fun providesNetworkUtils(@ApplicationContext context: Context) = NetworkUtils(context)
+
+    @Provides
+    @Singleton
+    fun providesMedicinesRepository(apiService: ApiService, medicineDao: MedicineDao, networkUtils: NetworkUtils): MedicinesRepository {
+        return MedicinesRepositoryImpl(apiService, medicineDao, networkUtils)
     }
 
 

@@ -1,6 +1,7 @@
 [versions]
 agp = "8.7.0"
 assertjCore = "3.23.1"
+composeShimmer = "1.2.0"
 converterGson = "2.9.0"
 hiltNavigationCompose = "1.2.0"
 kotlin = "2.0.20"
@@ -32,6 +33,7 @@ androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "roomRunt
 androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "roomRuntime" }
 androidx-room-testing = { module = "androidx.room:room-testing", version.ref = "roomRuntime" }
 assertj-core = { module = "org.assertj:assertj-core", version.ref = "assertjCore" }
+compose-shimmer = { module = "com.valentinilk.shimmer:compose-shimmer", version.ref = "composeShimmer" }
 converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "converterGson" }
 hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hiltVersion" }
 hilt-android-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hiltVersion" }

@@ -31,9 +31,10 @@ fun SetUpNavGraph(
             navController.navigate(Screens.MedicalDetails.route + "/${Uri.encode(medicine)}")
         }, onLogout = {
             navController.navigate(Screens.Login.route) {
-                popUpTo(Screens.Home.route) {
+                popUpTo(0) {
                     inclusive = true
                 }
+                launchSingleTop = true
             }
         })
 
@@ -54,7 +55,7 @@ fun NavGraphBuilder.loginRoute(
 
 fun NavGraphBuilder.homeRoute(onCardClick: (Medicine) -> Unit, onLogout: ()-> Unit) {
     composable(route = Screens.Home.route + "/{userName}") {
-        val userName = it.arguments?.getString("userName") ?: "Usman"
+        val userName = it.arguments?.getString("userName") ?: "Test"
         HomeScreen(userName = userName, onCardClick = onCardClick, onLogout)
     }
 }

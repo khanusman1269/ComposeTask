@@ -41,6 +41,7 @@ fun CustomTextField(
         placeholder = {
             Text(placeHolderText, style = Grey13Regular)
         },
+        maxLines = 1,
         leadingIcon = leadingIcon,
         trailingIcon = trailingIcon,
         shape = RoundedCornerShape(12.dp),

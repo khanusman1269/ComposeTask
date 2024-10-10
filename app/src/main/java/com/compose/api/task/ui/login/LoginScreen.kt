@@ -65,6 +65,7 @@ fun LoginForm(
     onLoginClick: (String, String) -> Unit,
     onLoginSuccess: (String) -> Unit
 ) {
+    val maxChar = 20
     val username = remember { mutableStateOf("") }
     val password = remember { mutableStateOf("") }
     var passwordVisibility by remember { mutableStateOf(false) }
@@ -100,7 +101,7 @@ fun LoginForm(
                 Spacer(Modifier.height(4.dp))
                 CustomTextField(
                     value = username.value,
-                    onValueChange = { username.value = it },
+                    onValueChange = { if (it.length <= maxChar) username.value = it },
                     placeHolderText = "Enter email or username",
                     leadingIcon = {
                         Icon(Icons.Outlined.Email, contentDescription = "Email")
@@ -116,7 +117,7 @@ fun LoginForm(
                 Spacer(Modifier.height(4.dp))
                 CustomTextField(
                     value = password.value,
-                    onValueChange = { password.value = it },
+                    onValueChange = { if (it.length <= maxChar) password.value = it },
                     visualTransformation = if (passwordVisibility) VisualTransformation.None else PasswordVisualTransformation(),
                     placeHolderText = "Enter password",
                     leadingIcon = {

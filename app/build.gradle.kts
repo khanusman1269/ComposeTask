@@ -17,6 +17,8 @@ android {
         versionCode = 1
         versionName = "1.0"
 
+        setProperty("archivesBaseName", "Compose-$versionName")
+
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -73,11 +75,8 @@ dependencies {
     implementation(libs.androidx.room.runtime)
     implementation(libs.androidx.room.ktx)
     ksp (libs.androidx.room.compiler)
-    testImplementation(libs.hilt.android.testing)
-    kspTest(libs.hilt.android.compiler)
     testImplementation (libs.mockito.core)
     testImplementation (libs.mockito.kotlin)
     testImplementation (libs.assertj.core)
-    testImplementation(libs.androidx.room.testing)
-    testImplementation (libs.kotlinx.coroutines.test)
+    implementation(libs.compose.shimmer)
 }
