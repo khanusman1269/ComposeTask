@@ -5,15 +5,21 @@ A simple Kotlin-based mobile application that allows users to log in, view medic
 ## Features
 - **Login Screen**: Users can log in with any username and password without validation.
   <p align="left">
-    <img src= "https://github.com/user-attachments/assets/9f16e5a4-348f-483e-9665-a503f990ceb7" alt="Splash" width="300">
+    <img src= "https://github.com/user-attachments/assets/9f16e5a4-348f-483e-9665-a503f990ceb7" alt="Splash" width="250">
   </p>
 - **Medicine Cards**: Displays a list of medicines with details (name, dose, strength) fetched from a remote API and stored locally using Room Database.
-  <img src= "https://github.com/user-attachments/assets/46907762-8b75-4d52-b9d6-775f79c655ad" alt="Data" width="300">
+  <p align="left">
+    <img src= "https://github.com/user-attachments/assets/46907762-8b75-4d52-b9d6-775f79c655ad" alt="Data" width="250">
+  </p>
 - **Detailed View**: Tapping on a medicine card opens a detailed view showing all medicine details.
-  <img src= "https://github.com/user-attachments/assets/085fd2c7-07fb-4295-b413-933de14d8f36" alt="Details" width="300">
+  <p align="left">
+    <img src= "https://github.com/user-attachments/assets/085fd2c7-07fb-4295-b413-933de14d8f36" alt="Details" width="250">
+  </p>
 - **Internet Connectivity Check**: The app checks for internet connectivity before fetching data.
 - **Logout **: Logout is used to clear local room data.
-  <img src= "https://github.com/user-attachments/assets/f322f17e-af12-4f42-bc6b-1e49809bf763" alt="Logout" width="300">
+  <p align="left">
+    <img src= "https://github.com/user-attachments/assets/f322f17e-af12-4f42-bc6b-1e49809bf763" alt="Logout" width="250">
+  </p>
 
 ## Tech Stack
 - **Language**: Kotlin
